@@ -9,13 +9,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
-
-
-app.use(require('./routes/usuario'));
+    //Configuracion global de rutas
+app.use(require('./routes/index'));
 
 
 app.listen(process.env.PORT, () => {
-    console.log('Puerto 3000');
+    console.log('Puerto:', process.env.PORT);
 });
 
 mongoose.connect(process.env.URLDB = urlDB, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }, (err, res) => {
